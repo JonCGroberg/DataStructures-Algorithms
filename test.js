@@ -7,7 +7,7 @@ console.log(b);
 
 
 //Linear Search returing the index of the target element
-function linearSearch(array: number[], targetElement: number):number{
+function linearSearch(array, targetElement){
     for(let i = 0; i < array.length; i++){
         if(array[i] === targetElement){
             return i;
