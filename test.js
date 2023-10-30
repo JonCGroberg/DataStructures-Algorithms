@@ -1,39 +1,38 @@
 // const a = new Uint16Array(3);
 // const b = new Uint8Array(a.buffer);
 
-// console.log(a);
-// console.log(b);
-
-// //Performance Measure
-// function timing(func, ...args) {
-//   let time = 0;
-//   let trials = 1000;
-//   for (let i = 0; i < trials; i++) {
-//     const t0 = performance.now();
-//     func(args[0], args[1]);
-//     const t1 = performance.now();
-//     time += t1 - t0;
-//   }
-
-//   console.log(`took ${(time / trials).toFixed(4)} milliseconds`);
-// }
-
-//Linear Search returing the index of the target element
+//Linear Search returning the index of the target element| DNE returns -1
 function linearSearch(array, targetElement) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === targetElement) {
       return i;
     }
   }
-  throw new Error("Element not found");
+  return -1;
 }
 
-// console.log(linearSearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5));
+//Binary Search returning the index of the target element| DNE returns -1
+function binarySearch(array, targetElem) {
+  let low = 0;
+  let high = array.length - 1;
 
-//Binary Search
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    let midElem = array[mid];
 
-function binarySearch(array, targetElement) {
-    
+    if (targetElem === midElem) {
+      return mid;
+    } else if (midElem > targetElem) {
+      high = mid;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return -1;
 }
 
-// timing(linearSearch, [1, 2, 4, 5, 6, 7, 9, 8, 66, 434], 66);
+
+let array = [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, 12, 13];
+let indexOfNumber = binarySearch(array, 0);
+
+console.log(indexOfNumber);
