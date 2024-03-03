@@ -122,13 +122,35 @@ class LinkedList {
 	}
 
 	get(targetIndex) {
-		if (targetIndex > this.length - 1 || index < 0) return -1;
+		if (targetIndex - 1 > this.length || targetIndex < 0) return -1;
 
 		let node = this.getFirst();
 		for (let i = 0; i < targetIndex; i++) {
 			node = node.next;
 		}
 		return node;
+	}
+
+	set(targetIndex, data) {
+		const targetNode = this.get(targetIndex);
+
+		if (!targetIndex) return false;
+		else {
+			targetNode.data = data;
+			return true;
+		}
+	}
+
+	remove(index) {
+		if (index == 0) return this.shift();
+		if (this.get(index) == -1) return null;
+
+		let prev = this.get(index - 1);
+		let node = prev.next
+		prev.next = prev.next.next;
+		this.length--;
+
+		return node
 	}
 }
 
@@ -137,5 +159,7 @@ list.push(5);
 list.push(3);
 list.push(6);
 list.unshift(1);
+list.set(3, 100);
+list.remove(2);
 
-console.log(list, list.get(4));
+console.log(list, list.get(3));
