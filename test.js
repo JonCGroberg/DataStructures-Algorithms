@@ -163,3 +163,5 @@ list.set(3, 100);
 list.remove(2);
 
 console.log(list, list.get(3));
+
+
