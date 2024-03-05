@@ -1,28 +1,40 @@
-# Data Structures
+# Data Structures and algorithms
+
+Explanation of basic data structures and algorithms including searching and sorting
+
+## Data Structures
 
 - Array
+  - Dynamic Array
+  - Fixed Array
+- Linked List
+- Hashmap
+  - Dictionary
+  - Set
+  - Map
+- Tree
 
-## Array
+### Array
 
-### Arrays in Nodejs
+#### Arrays in Nodejs
 
 ```javascript
 const a = new ArrayBuffer(6); // => `<00 00 00 00 00 00>`
 const a = new Uint16Array(3); // => `<00 00 00 00 00 00>`
 ```
 
-### Features
+#### Features
 
 - fixed size
 - get
 - set
 - delete
 
-# Algorithms
+## Algorithms
 
-## Search
+### Search
 
-### Linear
+#### Linear
 
 - Works on all arrays
 
@@ -43,11 +55,11 @@ function linearSearch(array, targetElement) {
 }
 ```
 
-### Binary
+#### Binary
 
 - Works only on sorted arrays
 
-> Checks the middle value and decided if the
+> Checks the middle value and decides if target value is on the left or right half of the array
 
 > **Time Complexity** : `O(log(n))`
 
@@ -74,11 +86,11 @@ function binarySearch(array, targetElem) {
 }
 ```
 
-## Sort
+### Sort
 
 > Bubble sort and Selection Sort of have `O(n^2)` time complexity because each element is compared to every other element
 
-### Bubble Sort
+#### Bubble Sort
 
 > Swaps two elements `elem1` and `elem` 2 `ifelem1 > elem2`, compares each element to every other element
 
@@ -104,7 +116,7 @@ function bubbleSort(arr) {
 }
 ```
 
-### Selection Sort
+#### Selection Sort
 
 > **Time Complexity** : `O(n^2)`
 
